@@ -1,5 +1,6 @@
 # SCMD-propagator
 Propagation algorithm for Stochastic Constraints on Monotonic Distributions (SCMDs), as described in: _Stochastic Constraint Propagation for Mining Probabilistic Networks_, Anna Louise D. Latour, Behrouz Babaki, and Siegfried Nijssen, to appear at IJCAI 2019, Macao.
+Along with additional changes to this algorithm, as described in _Programming a Stochastic Constraint Optimisation Algorithm, by Optimisation_, Daniël Fokkinga, Anna Louise D. Latour, Marie Anastacio, Siegfried Nijssen and Holger H. Hoos, to appear at the DSO workshop at IJCAI 2019, Macao. 
 
 ## Contents of this repository
 In this repository we provide:
@@ -36,12 +37,26 @@ and the following branching heuristics:
 - bottom-zero
 - bottom-one
 
+For the ME problem setting we also support the following additional branching heuristics, which require additional preprocessing:
+- degree-zero
+- degree-one
+- influence-zero
+- influence-one
+- betweenness-zero
+- betweenness-one
+
 We also support the collection of the search trace in a trace file and toggle detailed output during the search with the `-v` or `--verbose` flag.
 
 To use our SCMD propagator to solve an `ME` problem setting for which the probability distribution is encoded in `[OBDD_file]`, with upper bound on the cardinality of the positive decisions `[constraint_threshold]`, and branching heuristic `[heuristic]`, writing the trace to `[trace_file]` and printing the search details to the terminal, run:
 ```
 $ ./SCMD-propagator/target/pack/bin/run ME --bdd-file [OBDD_file] --max-card [constraint_threshold] --branching [heuristic] --trace-file [trace_file] -v
 ```
+
+To use the branching heuristic that require additional preprocessing a file with the values for the heuristics has to be included in the command. To run the propagator with `[heuristic_file]`, use:
+```
+$ ./SCMD-propagator/target/pack/bin/run ME --bdd-file [OBDD_file] --max-card [constraint_threshold] --branching [heuristic] --trace-file [trace_file] -v --heuristic-file [heuristic-file]
+```
+
 We have less support for the `MC` problem setting: 
 ```
 $ ./SCMD-propagator/target/pack/bin/run MC [OBDD_file] [constraint_threshold]
@@ -62,6 +77,11 @@ Please contact us if you are looking for the following files:
 - scripts for generating OBDDs from ProbLog programs;
 - code for generating GAC-guaranteeing MIP encoding of Stochastic Constraint Optimisation Problems (SCOPs) and Stochastic Constraint Problems on Monotonic Distributions (SCMDs);
 - benchmarking scripts.
+
+And additionally, 
+- scripts for generating OBDDs from ProbLog programs, that include alternative minimisation techniques
+- scripts to run the full configurable solver (from ProbLog to solution).
+- scripts for configuration experiments.
 
 ## License
 The propagation algorithm for the Stochastic Constraint on Monotonic Distributions (SCMD) in [./SCMD-propagator/src/main/scala/](https://github.com/latower/SCMD/blob/master/SCMD-propagator/src/main/scala/) is licensed under the [MIT license](https://github.com/latower/SCMD/blob/master/LICENSE).
