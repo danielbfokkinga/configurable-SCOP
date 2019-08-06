@@ -39,11 +39,12 @@ $ ./SCMD-propagator/target/pack/bin/run ME --bdd-file [OBDD_file] --max-card [co
 ## More information
 Please contact us if you are looking for the following files:
 - scripts for generating OBDDs from ProbLog programs, including alternative minimisation techniques;
-- scripts to run the full configurable solver (from ProbLog to solution);
+- scripts for the preprocessing required for the alternative branching heuristics;
+- scripts to run the full configurable solver (from ProbLog model to solution);
 - scripts for configuration experiments.
 
 ## License
 The propagation algorithm for the Stochastic Constraint on Monotonic Distributions (SCMD) in [./SCMD-propagator/src/main/scala/](https://github.com/latower/SCMD/blob/master/SCMD-propagator/src/main/scala/) is licensed under the [MIT license](https://github.com/latower/SCMD/blob/master/LICENSE).
 
 ## Contributors
-The code in this repository comes from [the original repository](https://github.com/latower/SCMD/) with a few changes made by Daniël Fokkinga ([@danielbfokkinga](https://github.com/danielbfokkinga)
+The code in this repository comes from [the original repository](https://github.com/latower/SCMD/) with a few changes made by Daniël Fokkinga ([@danielbfokkinga](https://github.com/danielbfokkinga))
