@@ -46,17 +46,15 @@ object RunnerMaxExp extends App with CPModel {
 		numberOfMaxVars = bdd.numberOfMaxVars
 		varMap = bdd.decMapCpToBdd
 		
-		val heuristics = new Array[Int](numberOfMaxVars)
-		val heuristics2 = new Array[Float](numberOfMaxVars)
+		val heuristics = new Array[Int](numberOfMaxVars) //integers
+		val heuristics2 = new Array[Float](numberOfMaxVars) //real valued heuristic
 		if ((config.branching == "degree-one") || (config.branching == "degree-zero") || (config.branching == "influence-zero") || (config.branching == "influence-one")){
 			val lines: List[String] = Source.fromFile(config.heuristicFile).getLines().toList
-			//:ihavenoideawhatimdoing:
 			val temp = lines.filterNot(_.isEmpty).map{line=>(line)}.toArray 
 			for (i <- 0 until numberOfMaxVars)
 				heuristics(i) = temp(i).toInt
 		}else if ((config.branching == "betweenness-zero") || (config.branching == "betweenness-one")){
 			val lines: List[String] = Source.fromFile(config.heuristicFile).getLines().toList
-			//:ihavenoideawhatimdoing:
 			val temp = lines.filterNot(_.isEmpty).map{line=>(line)}.toArray 
 			for (i <- 0 until numberOfMaxVars)
 				heuristics2(i) = temp(i).toFloat
