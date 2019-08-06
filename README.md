@@ -3,6 +3,8 @@ Propagation algorithm for Stochastic Constraints on Monotonic Distributions (SCM
 
 Along with additional changes to this algorithm, as described in _Programming a Stochastic Constraint Optimisation Algorithm, by Optimisation_, Daniël Fokkinga, Anna Louise D. Latour, Marie Anastacio, Siegfried Nijssen and Holger H. Hoos, to appear at the DSO workshop at IJCAI 2019, Macao. 
 
+In the latter, we refer to this algorithm as a propagation algorihtm for Stochastic Constraint Optimisation Problems (SCOPs).
+
 ## Contents of this repository
 In this repository we provide the `Scala` implementation of the original SCMD propagation algorithm along with some changes such that alternative branching heuristics can be used in one of the problem settings.
 
