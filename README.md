@@ -46,7 +46,7 @@ Please contact us if you are looking for the following files:
 - scripts for configuration experiments.
 
 ## License
-The propagation algorithm for the Stochastic Constraint on Monotonic Distributions (SCMD) in [./SCMD-propagator/src/main/scala/](https://github.com/latower/SCMD/blob/master/SCMD-propagator/src/main/scala/) is licensed under the [MIT license](https://github.com/latower/SCMD/blob/master/LICENSE).
+We build on the propagation algorithm for Stochastic Constraints on Monotonic Distributions (SCMD) in [./SCMD-propagator/src/main/scala/](https://github.com/danielbfokkinga/configurable-SCOP/tree/master/SCMD-propagator/src/main/scala) licensed under [this license](https://github.com/danielbfokkinga/configurable-SCOP/blob/master/LICENCES/LICENSE) and make the resulting code available under [the following license](https://github.com/danielbfokkinga/configurable-SCOP/blob/master/LICENSE).
 
 ## Contributors
 The code in this repository comes from [the original repository](https://github.com/latower/SCMD/) with a few changes made by Daniël Fokkinga ([@danielbfokkinga](https://github.com/danielbfokkinga))
